@@ -1,9 +1,9 @@
 # nebulas .NET sdk 星云链.NET SDK
-本SDK基于.NET Standard 2.0开发(除Test项目为.NET Framework 4.6.1)。
-可以被.NET CORE、.NET Framework、Xamarin等项目调用。
+本SDK基于.NET Standard 2.0开发(除Test项目为.NET Framework 4.6.1)。<br>
+可以被.NET CORE、.NET Framework、Xamarin等项目调用。<br>
 
-本SDK在遵守C#开发相关规范的前提下，
-尽量与官方JS SDK的类结构、属性名、方法名保持一致，让使用者以最小学习成本使用。
+本SDK在遵守C#开发相关规范的前提下，<br>
+尽量与官方JS SDK的类结构、属性名、方法名保持一致，让使用者以最小学习成本使用。<br>
 
 使用示例：
 ```C#
