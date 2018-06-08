@@ -6,6 +6,7 @@
 尽量与官方JS SDK的类结构、属性名、方法名保持一致，让使用者以最小学习成本使用。
 
 使用示例：
+```C#
   string host = "https://mainnet.nebulas.io";
   string from = "n1TA6on2ikjjUcpwbtjjcsAgHTP7fEZ41Bk";
   string to = "n1o5DKJefXgFNLhUTXRiJFFrTp2npgSuhvW";
@@ -17,7 +18,7 @@
   string args = "[]";
   Nebulas.Neb neb = new Neb(new HttpRequest(host));
   string result = neb.API.CallAsync(from, to, value, nonce, gasPrice, gasLimit, function, args).Result;
-
+```
 
 
 当前是回复官方邮件的最小可行性验证版本。
