@@ -183,11 +183,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\星云链\\Nebulas\\Tool\\Tool.csproj",
+      "projectUniqueName": "D:\\星云链\\Nebulas\\nebulas-.NET-sdk\\Tool\\Tool.csproj",
       "projectName": "Tool",
-      "projectPath": "D:\\星云链\\Nebulas\\Tool\\Tool.csproj",
+      "projectPath": "D:\\星云链\\Nebulas\\nebulas-.NET-sdk\\Tool\\Tool.csproj",
       "packagesPath": "C:\\Users\\kuup\\.nuget\\packages\\",
-      "outputPath": "D:\\星云链\\Nebulas\\Tool\\obj\\",
+      "outputPath": "D:\\星云链\\Nebulas\\nebulas-.NET-sdk\\Tool\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

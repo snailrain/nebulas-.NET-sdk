@@ -10,3 +10,15 @@ D:\星云链\Nebulas\Nebulas\obj\Debug\netstandard2.0\Nebulas.csproj.CopyComplet
 D:\星云链\Nebulas\Nebulas\bin\Debug\netstandard2.0\Nebulas.pdb
 D:\星云链\Nebulas\Nebulas\obj\Debug\netstandard2.0\Nebulas.dll
 D:\星云链\Nebulas\Nebulas\obj\Debug\netstandard2.0\Nebulas.pdb
+D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas\bin\Debug\netstandard2.0\Nebulas.deps.json
+D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas\bin\Debug\netstandard2.0\Nebulas.dll
+D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas\bin\Debug\netstandard2.0\Nebulas.pdb
+D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas\bin\Debug\netstandard2.0\Tool.dll
+D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas\bin\Debug\netstandard2.0\Tool.pdb
+D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas\obj\Debug\netstandard2.0\Nebulas.csprojResolveAssemblyReference.cache
+D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas\obj\Debug\netstandard2.0\Nebulas.csproj.CoreCompileInputs.cache
+D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas\obj\Debug\netstandard2.0\Nebulas.AssemblyInfoInputs.cache
+D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas\obj\Debug\netstandard2.0\Nebulas.AssemblyInfo.cs
+D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas\obj\Debug\netstandard2.0\Nebulas.csproj.CopyComplete
+D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas\obj\Debug\netstandard2.0\Nebulas.dll
+D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas\obj\Debug\netstandard2.0\Nebulas.pdb
