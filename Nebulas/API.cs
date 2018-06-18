@@ -1,61 +1,29 @@
 ﻿using Nebulas.Schema;
+using Nebulas.Schema.Request;
+using Nebulas.Schema.Response;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Nebulas
 {
-    public class API 
+    public class API: BaseNeb
     {
-        private HttpRequest _request { get; set; }
-        private string _path { get; set; }
-
-        /// <summary>
-        /// Camel与C#规则转换
-        /// </summary>
-        private JsonSerializerSettings camelCaseSetting = new JsonSerializerSettings
+        public API(HttpRequest request) : base(request)
         {
-            ContractResolver = new CamelCasePropertyNamesContractResolver()
-        };
-
-        /// <summary>
-        /// Camel + 下划线 与 C# 规则转换
-        /// </summary>
-        private JsonSerializerSettings underLineSetting = new JsonSerializerSettings
-        {
-            ContractResolver = new UnderlineSplitContractResolver()
-        };
-
-        public API(HttpRequest request)
-        {
-            setRequest(request);
-        }
-
-        private void setRequest(HttpRequest request)
-        {
-            _request = request;
-            _path = "/user";
-        }
-
-        private async Task<string> sendRequestAsync(string method, string api, string paramsOptions)
-        {
-            string action = _path + api;
-            return await _request.RequestAsync(method, action, paramsOptions);
+            _path = "user";
         }
         
-        private void beginSendRequestAsync(string method, string api, string paramsOptions,Action<string> onDownloadProgressEvent)
+        private void beginSendRequestAsync(string mNasod, string api, string paramsOptions,Action<string> onDownloadProgressEvent)
         {
             string action = _path + api;
             _request.OnDownloadProgressEvent = onDownloadProgressEvent;
-            _request.BeginRequestAsync(method, action, paramsOptions);
+            _request.BeginRequestAsync(mNasod, action, paramsOptions);
         }
 
 
         /**
-         * Method get state of Nebulas Network.
+         * MNasod get state of Nebulas Network.
          * @see {@link https://github.com/nebulasio/wiki/blob/master/rpc.md#getnebstate}
          *
          * @return [NebStateObject]{@link https://github.com/nebulasio/wiki/blob/master/rpc.md#getnebstate}
@@ -68,12 +36,11 @@ namespace Nebulas
          */
         public async Task<TRq<TNebStateObject>> GetNebStateAsync()
         {
-            string result = await sendRequestAsync("get", "/nebstate", null);
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<TRq<TNebStateObject>>(result, underLineSetting);
+            return await sendRequestAsync<TNebStateObject>("get", "/nebstate", null, UnderLineSetting);
         }
 
         /**
-         * Method get latest irreversible block of Nebulas Network.
+         * MNasod get latest irreversible block of Nebulas Network.
          * @see {@link https://github.com/nebulasio/wiki/blob/master/rpc.md#latestirreversibleblock}
          *
          * @return [dataBlockInfo.]{@link https://github.com/nebulasio/wiki/blob/master/rpc.md#latestirreversibleblock}
@@ -86,13 +53,12 @@ namespace Nebulas
          */
         public async Task<TRq<TDataBlockInfo>> LatestIrreversibleBlockAsync()
         {
-            string result = await sendRequestAsync("get", "/lib", null);
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<TRq<TDataBlockInfo>>(result, underLineSetting);
+            return await sendRequestAsync<TDataBlockInfo>("get", "/lib", null, UnderLineSetting);
         }
 
 
         /**
-         * Method return the state of the account. Balance and nonce.
+         * MNasod return the state of the account. Balance and nonce.
          * @see {@link https://github.com/nebulasio/wiki/blob/master/rpc.md#getaccountstate}
          *
          * @param {Object} options
@@ -115,14 +81,13 @@ namespace Nebulas
                 Height = height
             };
 
-            string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(request, camelCaseSetting);
-            string result = await sendRequestAsync("post", "/accountstate", jsonString);
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<TRq<TAccountStateObject>>(result, underLineSetting);
+            string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(request, CamelCaseSetting);
+            return await sendRequestAsync<TAccountStateObject>("post", "/accountstate", jsonString, UnderLineSetting);
         }
 
 
         /**
-         * Method wrap smart contract call functionality.
+         * MNasod wrap smart contract call functionality.
          * @see {@link https://github.com/nebulasio/wiki/blob/master/rpc.md#call}
          *
          * @param {TransactionOptions} options
@@ -163,15 +128,14 @@ namespace Nebulas
                     Args = args
                 }
             };
-            string json = Newtonsoft.Json.JsonConvert.SerializeObject(callRequest, Formatting.Indented, camelCaseSetting);
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(callRequest, Formatting.Indented, CamelCaseSetting);
 
-            string result = await sendRequestAsync("post", "/call", json);
+            return await sendRequestAsync<dynamic>("post", "/call", json);
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(result);
         }
 
         /**
-         * Method wrap submit the signed transaction.
+         * MNasod wrap submit the signed transaction.
          * @see {@link https://github.com/nebulasio/wiki/blob/master/rpc.md#sendrawtransaction}
          *
          * @param {Object} options
@@ -200,11 +164,10 @@ namespace Nebulas
             RequestSendRawTransaction request = new RequestSendRawTransaction() {
                 Data = data
             };
-            string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(request, Formatting.Indented, camelCaseSetting);
+            string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(request, Formatting.Indented, CamelCaseSetting);
 
-            string result = await sendRequestAsync("post", "/rawtransaction", jsonString);
+            return await sendRequestAsync<dynamic>("post", "/rawtransaction", jsonString);
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(result);
         }
 
 
@@ -234,11 +197,10 @@ namespace Nebulas
                 Hash = hash,
                 FullFillTransaction = fullTransaction
             };
-            string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(request, Formatting.Indented, underLineSetting);
+            string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(request, Formatting.Indented, UnderLineSetting);
 
-            string result = await sendRequestAsync("post", "/getBlockByHash", jsonString);
+            return await sendRequestAsync<dynamic>("post", "/getBlockByHash", jsonString);
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(result);
         }
 
 
@@ -265,11 +227,9 @@ namespace Nebulas
                 Height = height,
                 FullFillTransaction = fullTransaction
             };
-            string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(request, Formatting.Indented, underLineSetting);
+            string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(request, Formatting.Indented, UnderLineSetting);
 
-            string result = await sendRequestAsync("post", "/getBlockByHeight", jsonString);
-
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(result);
+            return await sendRequestAsync<dynamic>("post", "/getBlockByHeight", jsonString);
         }
 
         /**
@@ -293,11 +253,9 @@ namespace Nebulas
             {
                 Hash = hash 
             };
-            string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(request, Formatting.Indented, underLineSetting);
+            string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(request, Formatting.Indented, UnderLineSetting);
 
-            string result = await sendRequestAsync("post", "/getTransactionReceipt", jsonString);
-
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(result);
+            return await sendRequestAsync<dynamic>("post", "/getTransactionReceipt", jsonString);
         }
 
         
@@ -323,7 +281,7 @@ namespace Nebulas
             RequestSubscribe request = new RequestSubscribe() {
                 Topics = topics
             };
-            string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(request, Formatting.Indented, underLineSetting);
+            string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(request, Formatting.Indented, UnderLineSetting);
 
             beginSendRequestAsync("post", "/subscribe", jsonString, callBackEvent);
         }
@@ -342,9 +300,7 @@ namespace Nebulas
          */
         public async Task<dynamic> GasPriceAsync()
         {
-            string result = await sendRequestAsync("get", "/getGasPrice", null);
-
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(result);
+            return await sendRequestAsync<dynamic>("get", "/getGasPrice", null);
         }
 
         /**
@@ -371,10 +327,8 @@ namespace Nebulas
          */
         public async Task<dynamic> EstimateGasAsync(RequestEstimateGas request)
         {
-            string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(request, Formatting.Indented, camelCaseSetting);
-            string result = await sendRequestAsync("post", "/estimateGas", jsonString);
-
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(result);
+            string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(request, Formatting.Indented, CamelCaseSetting);
+            return await sendRequestAsync<dynamic>("post", "/estimateGas", jsonString);
         }
 
         /**
@@ -397,15 +351,13 @@ namespace Nebulas
             RequestEventsByHash request = new RequestEventsByHash() {
                 Hash = hash
             };
-            string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(request, Formatting.Indented, camelCaseSetting);
-            string result = await sendRequestAsync("post", "/getEventsByHash", jsonString);
-
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(result);
+            string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(request, Formatting.Indented, CamelCaseSetting);
+            return await sendRequestAsync<dynamic>("post", "/getEventsByHash", jsonString);
         }
 
 
         /**
-         * Method getter for dpos dynasty.
+         * MNasod getter for dpos dynasty.
          * @see {@link https://github.com/nebulasio/wiki/blob/master/rpc.md#getdynasty}
          *
          * @param {Object} options
@@ -425,10 +377,8 @@ namespace Nebulas
             {
                 Height = height
             };
-            string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(request, Formatting.Indented, camelCaseSetting);
-            string result = await sendRequestAsync("post", "/dynasty", jsonString);
-
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(result);
+            string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(request, Formatting.Indented, CamelCaseSetting);
+            return await sendRequestAsync<dynamic>("post", "/dynasty", jsonString);
         }
 
     }

@@ -19,6 +19,7 @@ namespace Nebulas
             {
 
                 var ch = name[i];
+
                 //如果第一个是小写，说明是JsonProperty自定义过的，则不处理
                 if (i == 0 && char.IsLower(ch))
                 {

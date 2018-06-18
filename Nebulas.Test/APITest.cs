@@ -2,6 +2,7 @@
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nebulas.Schema;
+using Nebulas.Schema.Request;
 using Newtonsoft.Json;
 
 namespace Nebulas.Test
@@ -9,14 +10,14 @@ namespace Nebulas.Test
     [TestClass]
     public class APITest
     {
-        string _host = "https://mainnet.nebulas.io";
-        string from = "n1TbtKS8uTkN36DApfj7jPGYD53KjAN3HC3";
+        string _host = "https://testnet.nebulas.io";
+        string from = "n1TA6on2ikjjUcpwbtjjcsAgHTP7fEZ41Bk";
         [TestMethod]
         public void Call()
         {
 
             //string from, string to, string value, string nonce, int gasPrice, int gasLimit, string function,string args
-            string to = "n1o5DKJefXgFNLhUTXRiJFFrTp2npgSuhvW";
+            string to = "n22TK8fuUGbMGFKZTWus7a2R3a24uhr1NaQ";
             string value = "0";
             string nonce = "0";
             int gasPrice = 1000000;
@@ -73,7 +74,8 @@ namespace Nebulas.Test
         [TestMethod]
         public void EstimateGasAsync()
         {
-            RequestEstimateGas request = new RequestEstimateGas() {
+            RequestEstimateGas request = new RequestEstimateGas()
+            {
                 From = from,
                 To = "n1o5DKJefXgFNLhUTXRiJFFrTp2npgSuhvW",
                 Value = "0",
@@ -83,6 +85,14 @@ namespace Nebulas.Test
             };
             Nebulas.Neb neb = new Neb(new HttpRequest(_host));
             var result = neb.API.EstimateGasAsync(request).Result;
+            Assert.IsNotNull(result.Result);
+        }
+
+        [TestMethod]
+        public void GetTransactionReceiptAsync()
+        {
+            Nebulas.Neb neb = new Neb(new HttpRequest(_host));
+            var result = neb.API.GetTransactionReceiptAsync("ef2308cb962188481f879c159117fbd08bb7e3e1cf56f0163ab21c7ec31930cc").Result;
             Assert.IsNotNull(result.Result);
         }
     }
