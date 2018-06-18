@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Nebulas.Tool
 {
-
+    //https://gist.github.com/hanswolff/8809275
     // The MIT License (MIT)
 
     // Copyright (c) 2014 Hans Wolff
