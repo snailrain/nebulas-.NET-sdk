@@ -6,6 +6,8 @@
 尽量与官方JS SDK的类结构、属性名、方法名保持一致，让使用者以最小学习成本使用。<br>
 
 使用示例：
+
+Call方法 
 ```C#
   string host = "https://mainnet.nebulas.io";
   string from = "n1TA6on2ikjjUcpwbtjjcsAgHTP7fEZ41Bk";
@@ -17,8 +19,30 @@
   string function = "getIntegralByPage";
   string args = "[]";
   Nebulas.Neb neb = new Neb(new HttpRequest(host));
-  string result = neb.API.CallAsync(from, to, value, nonce, gasPrice, gasLimit, function, args).Result;
+  dynamic result = neb.API.CallAsync(from, to, value, nonce, gasPrice, gasLimit, function, args).Result;
 ```
 
+GetAccountState 
+```C#
+    HttpRequest request = new HttpRequest(_host);
+    API api = new API(request);
+    var accountState = api.GetAccountStateAsync("n1TA6on2ikjjUcpwbtjjcsAgHTP7fEZ41Bk").Result;
+    int nonce = ++accountState.Result.Nonce;
+```
 
-当前是回复官方邮件的可行性验证版本。
+SendRawTransaction 
+```C#
+    string function = "addIntegral";
+    string args = "[\"哈哈哈测试一下\",\"40000\"]";
+    var fromAccount = new Account("ab14bca2fd7703b76972a696a6df4ebeb45f20d01086d695b46b6120adbae4d9");
+    var tx = new Transaction(1001, fromAccount, to, ulong.Parse(value), ulong.Parse(nonce.ToString()), (ulong)gasPrice, (ulong)gasLimit, function, args);
+    tx.SignTransaction();
+
+    var result = api.SendRawTransactionAsync(tx.toProtoString()).Result;
+```
+
+GetTransactionReceipt
+```C#
+    Nebulas.Neb neb = new Neb(new HttpRequest(_host));
+    var result = neb.API.GetTransactionReceiptAsync("ef2308cb962188481f879c159117fbd08bb7e3e1cf56f0163ab21c7ec31930cc").Result;
+```
