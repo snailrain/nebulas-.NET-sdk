@@ -5,6 +5,8 @@
 本SDK在遵守C#开发相关规范的前提下，<br>
 尽量与官方JS SDK的类结构、属性名、方法名保持一致，让使用者以最小学习成本使用。<br>
 
+文档请参照官方[JS SDK](https://nebulasio.github.io/neb.js/index.html)文档，即可。
+
 使用示例：
 
 Call方法 
