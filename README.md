@@ -2,7 +2,7 @@
 本SDK基于.NET Standard 2.0开发(除Test项目为.NET Framework 4.6.1)。<br>
 可以被.NET CORE、.NET Framework、Xamarin等项目调用。<br>
 
-应开发者需求，SDK中增加了nebulas.Framework版本，在需要.net Framework框架时使用。
+应开发者需求，SDK中增加了nebulas.Framework版本以支持Unity。
 
 本SDK在遵守C#开发相关规范的前提下，<br>
 尽量与官方JS SDK的类结构、属性名、方法名保持一致，让使用者以最小学习成本使用。<br>
