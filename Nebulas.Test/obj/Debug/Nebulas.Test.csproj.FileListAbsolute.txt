@@ -230,10 +230,6 @@ D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas.Test\bin\Debug\Microsoft.AspNetCor
 D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
 D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas.Test\bin\Debug\Nebulas.dll
-D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas.Test\bin\Debug\Nethereum.Hex.dll
-D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas.Test\bin\Debug\Nethereum.RLP.dll
-D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas.Test\bin\Debug\Nethereum.Signer.dll
-D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas.Test\bin\Debug\Nethereum.Util.dll
 D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas.Test\bin\Debug\Newtonsoft.Json.dll
 D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas.Test\bin\Debug\Norgerman.Cryptography.Scrypt.dll
 D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas.Test\bin\Debug\System.Diagnostics.DiagnosticSource.dll
@@ -250,7 +246,6 @@ D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas.Test\obj\Debug\Nebulas.Test.csproj
 D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas.Test\obj\Debug\Nebulas.Test.csproj.CopyComplete
 D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas.Test\obj\Debug\Nebulas.Test.dll
 D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas.Test\obj\Debug\Nebulas.Test.pdb
-D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas.Test\bin\Debug\NetStandardHashLib.dll
 D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas.Test\bin\Debug\System.Numerics.Vectors.dll
 D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas.Test\bin\Debug\System.Numerics.Vectors.xml
-D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas.Test\obj\Debug\Nebulas.Test.csprojResolveAssemblyReference.cache
+D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas.Test\obj\Debug\Nebulas.Test.csprojAssemblyReference.cache

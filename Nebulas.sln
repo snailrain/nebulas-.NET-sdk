@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nebulas", "Nebulas\Nebulas.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebulas.Test", "Nebulas.Test\Nebulas.Test.csproj", "{2A8C565B-0FE1-49FC-9352-7BA197A291E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nebulas.Framework", "Nebulas.Framework\Nebulas.Framework.csproj", "{504CB137-A1B1-4BE6-9F01-87436AE773AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2A8C565B-0FE1-49FC-9352-7BA197A291E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A8C565B-0FE1-49FC-9352-7BA197A291E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A8C565B-0FE1-49FC-9352-7BA197A291E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{504CB137-A1B1-4BE6-9F01-87436AE773AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{504CB137-A1B1-4BE6-9F01-87436AE773AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{504CB137-A1B1-4BE6-9F01-87436AE773AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{504CB137-A1B1-4BE6-9F01-87436AE773AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

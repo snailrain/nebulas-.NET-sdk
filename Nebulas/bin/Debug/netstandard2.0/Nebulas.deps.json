@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "56bf4d3647da6ec8572fe88fb579f9467db3f093"
+    "signature": "34291f18bfbf7d9857f77afd3a0da091245cce65"
   },
   "compilationOptions": {},
   "targets": {
@@ -14,7 +14,6 @@
           "Google.Protobuf": "3.5.1",
           "Microsoft.CSharp": "4.5.0",
           "NETStandard.Library": "2.0.1",
-          "NetStandardHashLib": "1.0.0",
           "Newtonsoft.Json": "11.0.2",
           "Norgerman.Cryptography.Scrypt": "1.1.1"
         },
@@ -68,11 +67,6 @@
       "NETStandard.Library/2.0.1": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
-        }
-      },
-      "NetStandardHashLib/1.0.0": {
-        "runtime": {
-          "lib/netstandard2.0/NetStandardHashLib.dll": {}
         }
       },
       "Newtonsoft.Json/11.0.2": {
@@ -212,13 +206,6 @@
       "sha512": "sha512-oA6nwv9MhEKYvLpjZ0ggSpb1g4CQViDVQjLUcDWg598jtvJbpfeP2reqwI1GLW2TbxC/Ml7xL6BBR1HmKPXlTg==",
       "path": "netstandard.library/2.0.1",
       "hashPath": "netstandard.library.2.0.1.nupkg.sha512"
-    },
-    "NetStandardHashLib/1.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Tedfmz/yZfBO8CbN+6WflsKG8GawEjw8H0VRlN0SC94uX0atW3LgBA7vZGKI3Xa8/g2IzTYcMcSXDpeX+4qDXQ==",
-      "path": "netstandardhashlib/1.0.0",
-      "hashPath": "netstandardhashlib.1.0.0.nupkg.sha512"
     },
     "Newtonsoft.Json/11.0.2": {
       "type": "package",

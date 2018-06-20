@@ -18,4 +18,3 @@ D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas\obj\Debug\netstandard2.0\Nebulas.A
 D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas\obj\Debug\netstandard2.0\Nebulas.AssemblyInfo.cs
 D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas\obj\Debug\netstandard2.0\Nebulas.dll
 D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas\obj\Debug\netstandard2.0\Nebulas.pdb
-D:\星云链\Nebulas\nebulas-.NET-sdk\Nebulas\obj\Debug\netstandard2.0\Nebulas.csprojResolveAssemblyReference.cache
